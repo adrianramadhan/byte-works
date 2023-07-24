@@ -1,0 +1,39 @@
+body{
+    background-color: #000406;
+}
+
+*{
+    font-family: 'inter', sans-serif;
+    font-weight: 700;
+}
+
+.main {
+    height: 60vh;
+}
+
+.login-box {
+    width: 500px;
+    height: 300px;
+    border-radius: 8px;
+    background-color: #D3E6FE;
+}
+
+.login-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#login-btn {
+    background-color: #334155;
+    color: white;
+}
+
+.login-heading {
+    margin-bottom: 30px;
+    font-size: 36px;
+}
