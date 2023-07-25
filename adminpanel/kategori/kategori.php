@@ -100,8 +100,8 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
 
         <!-- list kategori yang sudah ditambahkan akan muncul di bawah form tambah kategori -->
         <div class="mt-3">
-            <h2>List Kategori</h2>
-
+           <h3>List Kategori</h3>
+            
             <div class="table-responsive mt-5">
                 <table class="table">
                     <thead>
