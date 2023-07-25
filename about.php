@@ -8,7 +8,7 @@
     <title>Tentang Kami</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <?php require "adminpanel/component/navbar.php";?>
+    <?php require "admin/component/navbar-admin.php";?>
 </head>
 
 <body>
@@ -49,7 +49,7 @@
     <?php require 'component/footer.php' ?>
 
     <!-- untuk memanggil js bootstrap -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
