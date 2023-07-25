@@ -1,7 +1,7 @@
 <?php
 require "koneksi.php";
+require "component/navbar.php";
 $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM produk LIMIT 6");
-
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +17,8 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM pr
 </head>
 
 <body>
-    <?php require "component/navbar.php" ?>
-
     <!-- Banner/Hero Section -->
-    <div class="container-fluid banner d-flex align-items-center">
+    <div class="container-fluid banner d-flex align-items-center" id="home">
         <div class="container text-center text-white">
             <h1 class="custom-text1"><b>Your Future Device</b></h1>
             <style>
@@ -106,7 +104,7 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM pr
     </div>
 
     <!-- Tentang Kami -->
-    <h3 class="mt-3" align="center"><b>Tentang Kami</b></h3>
+    <h3 class="mt-3" align="center" id="about"><b>Tentang Kami</b></h3>
     <br>
     <div class="container-fluid warna-3 py-5">
         <div class="container text-center">
@@ -145,11 +143,13 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM pr
                 seperti smartphone,laptop,tablet,kamera,dan aksesori lainnya. Selain menyediakan produk berkualitas dari
                 merek-merek terkenal, kami juga menawarkan layanan pelanggan yang responsif dan pengiriman yang cepat.
                 Mari bergabung bersama kami, Byterian !
+
             </p>
         </div>
     </div>
+
     <!-- < !-- Produk -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="produk">
         <div class="container text-center">
             <h3><b>Produk</b></h3>
             <div class="row mt-5"><?php while ($data=mysqli_fetch_array($queryProduk)) {
@@ -165,12 +165,14 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM pr
                                     class="btn text-white">Lihat Detail</a>
                         </div>
                     </div>
-                </div><?php
+                </div>
+                <?php
                     }
-
-                    ?></div><a class="btn btn-outline-warning mt-3 p-2" href="produk.php">See More</a>
+                ?>
+            </div><a class="btn btn-outline-warning mt-3 p-2" href="produk.php">See More</a>
         </div>
     </div>
+
     <!-- < !-- Footer -->
     <?php require "component/footer.php"?><script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="fontawesome/js/all.min.js"></script>
