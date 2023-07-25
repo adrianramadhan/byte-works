@@ -1,10 +1,16 @@
 <?php
+// untuk memastikan koneksi ke database dan menampilkan navbar jika ada
 require "../../koneksi.php";
+require "../component/navbar.php";
 
+// melakukan query ke database untuk mengambil semua data dari tabel kategori
 $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
+
+// menghitung jumlah data kategori yang telah diambil dari database
 $jumlahKategori = mysqli_num_rows($queryKategori);
 ?>
 
+<!-- HTML Section -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,19 +18,22 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kategori</title>
+
+    <!-- Menambahkan file eksternal CSS Bootstrap dan Font Awesome untuk mengatur tampilan dan ikon pada halaman. -->
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
 </head>
 
+<!-- CSS internal -->
 <style>
-    .no-decoration {
-        text-decoration: none;
-        color: #212529bf;
-    }
+.no-decoration {
+    text-decoration: none;
+    color: #212529bf;
+}
 </style>
 
 <body>
-    <?php require "../component/navbar.php" ?>
+    <!-- Section Tambah Kategori -->
     <div class="container mt-5">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -40,10 +49,12 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
         <div class="my-5 col-12 col-md-6">
             <h3>Tambah kategori</h3>
 
+            <!-- form tambah kategori -->
             <form action="" method="post">
                 <div>
                     <label for="kategori">Kategori</label>
-                    <input class="form-control" type="text" id="kategori" name="kategori" placeholder="Input Nama Kategori">
+                    <input class="form-control" type="text" id="kategori" name="kategori"
+                        placeholder="Input Nama Kategori">
                 </div>
                 <div>
                     <div class="mt-3">
@@ -52,6 +63,7 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
                 </div>
             </form>
 
+            <!-- fungsi menambah kategori -->
             <?php
             if (isset($_POST['simpan_kategori'])) {
                 $kategori = htmlspecialchars($_POST['kategori']);
@@ -61,20 +73,24 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
 
                 if ($jumlahDataKategoriBaru > 0) {
             ?>
-                    <div class="alert alert-warning mt-2" role="alert">
-                        Kategori Sudah Ada
-                    </div>
-                    <?php
+
+            <!-- alert yang muncul apabila kategori sudah ada-->
+            <div class="alert alert-warning mt-2" role="alert">
+                Kategori Sudah Ada
+            </div>
+            <?php
                 } else {
                     $querySimpan = mysqli_query($conn, "INSERT INTO kategori (nama) VALUES ('$kategori')");
 
                     if ($querySimpan) {
                     ?>
-                        <div class="alert alert-success mt-2" role="alert">
-                            Kategori Berhasil Disimpan
-                        </div>
 
-                        <meta http-equiv="refresh" content="0; url=kategori.php">
+            <!-- alert yang muncul apabila kategori berhasil disimpan-->
+            <div class="alert alert-success mt-2" role="alert">
+                Kategori Berhasil Disimpan
+            </div>
+
+            <meta http-equiv="refresh" content="0; url=kategori.php">
             <?php
                     }
                 }
@@ -82,6 +98,7 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
             ?>
         </div>
 
+        <!-- list kategori yang sudah ditambahkan akan muncul di bawah form tambah kategori -->
         <div class="mt-3">
             <h2>List Kategori</h2>
 
@@ -93,24 +110,29 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
                         <th>Action</th>
                     </thead>
                     <tbody>
+
+                        <!--  fungsi pencarian data -->
                         <?php
                         $number = 1;
+                        // pengkondisian apabila kategori tidak ada
                         if ($jumlahKategori == 0) {
                         ?>
-                            <td class="text-center" colspan="3">Data Tidak Tersedia</td>
-                            <?php
-                        } else {
+                        <td class="text-center" colspan="3">Data Tidak Tersedia</td>
+                        <?php
+                        
+                        // pengkondisian apabila ada kategori yang sudah ditambahkan
+                        } else {   
                             while ($data = mysqli_fetch_array($queryKategori)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $number ?></td>
-                                    <td><?php echo $data['nama'] ?></td>
-                                    <td>
-                                        <a href="kategori-detail.php?p=<?php echo $data['id']; ?>" class="btn btn-info">
-                                            <i class="fas fa-search"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td><?php echo $number ?></td>
+                            <td><?php echo $data['nama'] ?></td>
+                            <td>
+                                <a href="kategori-detail.php?p=<?php echo $data['id']; ?>" class="btn btn-info">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </td>
+                        </tr>
                         <?php
                                 $number++;
                             }
@@ -122,6 +144,7 @@ $jumlahKategori = mysqli_num_rows($queryKategori);
         </div>
     </div>
 
+    <!-- untuk memanggil file bootstrap -->
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
     <script src="../../fontawesome/js/all.min.js"></script>
 </body>
