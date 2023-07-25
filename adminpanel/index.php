@@ -1,5 +1,6 @@
 <?php
 require "../koneksi.php";
+require "component/navbar.php";
 
 $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
 $jumlahKategori = mysqli_num_rows($queryKategori);
@@ -33,6 +34,13 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
         background-color: #0a516b;
         border-radius: 12px;
     }
+
+    .export-pdf-btn {
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    z-index: 9999;
+}
 </style>
 
 <body>
@@ -49,8 +57,12 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
             </ol>
         </nav>
 
-        <h2>Dasboard Admin</h2>
+        <!-- button export to pdf -->
+        <a href="#" class="btn btn-primary export-pdf-btn">
+            <i class="fas fa-file-pdf"></i> Export to PDF</a>
 
+        <!-- section dashboard admin -->
+        <h2>Dasboard Admin</h2>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-3">
