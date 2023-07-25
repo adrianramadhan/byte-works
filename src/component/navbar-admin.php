@@ -85,22 +85,22 @@
             <ul class="navbar-nav">
                 <!-- Navigation Link: Home -->
                 <li class="nav-item me-3">
-                    <a class="nav-link text-white" href="../dashboard/index.php"><b>Home</b></a>
+                    <a class="nav-link text-white" href="../../admin/dashboard/index.php"><b>Home</b></a>
                 </li>
 
                 <!-- Navigation Link: Produk -->
                 <li class="nav-item me-3">
-                    <a class="nav-link text-white" href="../client/product/produk.php"><b>Produk</b></a>
+                    <a class="nav-link text-white" href="../../client/product/produk.php"><b>Produk</b></a>
                 </li>
 
                 <!-- Navigation Link: Tentang Kami -->
                 <li class="nav-item me-3">
-                    <a class="nav-link text-white" href="../../about.php"><b>Tentang Kami</b></a>
+                    <a class="nav-link text-white" href="../../../about.php"><b>Tentang Kami</b></a>
                 </li>
 
                 <!-- Navigation Link: Logout -->
                 <li class="nav-item me-3">
-                    <a class="nav-link text-white" href="../../index.php" id="logoutLink"><b>Logout</b></a>
+                    <a class="nav-link text-white" href="../../../index.php" id="logoutLink"><b>Logout</b></a>
                 </li>
             </ul>
         </div>
