@@ -1,6 +1,6 @@
 <?php
 require "koneksi.php";
-require "adminpanel/component/navbar.php";
+require "component/navbar.php";
 
 $nama = htmlspecialchars($_GET['nama']);
 $queryProduk = mysqli_query($conn, "SELECT * FROM produk WHERE nama='$nama'");
