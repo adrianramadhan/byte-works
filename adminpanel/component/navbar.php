@@ -88,16 +88,16 @@
                     <a class="nav-link text-white" href="../adminpanel/index.php"><b>Home</b></a>
                 </li>
 
-                <!-- Navigation Link: Produk -->
-                <li class="nav-item me-3">
-                    <a class="nav-link text-white" href="../../produk.php"><b>Produk</b></a>
-                </li>
-
                 <!-- Navigation Link: Tentang Kami -->
                 <li class="nav-item me-3">
                     <a class="nav-link text-white" href="../../about.php"><b>Tentang Kami</b></a>
                 </li>
 
+                <!-- Navigation Link: Produk -->
+                <li class="nav-item me-3">
+                    <a class="nav-link text-white" href="../../produk.php"><b>Produk</b></a>
+                </li>
+                
                 <!-- Navigation Link: Logout -->
                 <li class="nav-item me-3">
                     <a class="nav-link text-white" href="../../index.php" id="logoutLink"><b>Logout</b></a>
