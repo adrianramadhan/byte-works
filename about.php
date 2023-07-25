@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Head Section -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Kami</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <?php require "adminpanel/component/navbar.php";?>
 </head>
 
 <body>
-    <?php require "component/navbar.php" ?>
-
     <!-- Banner/Hero Section -->
     <div class="container-fluid banner-produk d-flex align-items-center">
         <div class="container">
-            <h1 class="text-white text-center">Tentang Kami</h1>
-
+            <h1 class="text-white text-center"><b>About Us</b></h1>
         </div>
     </div>
 
-
+<!-- Section About Us-->
     <div class="mt-5" style="margin-left: 15%; margin-right: 15%;">
-        <p class="text-center">Byte Works adalah sebuah toko komputer yang menawarkan beragam perangkat elektronik dan
+        <p class="text-center"><b>Byte Works</b> adalah sebuah toko komputer yang menawarkan beragam perangkat
+            elektronik dan
             gadget. Sebagai platform belanja online yang terpercaya, Byte Works menyediakan produk berkualitas dari
             merek-merek terkenal, seperti smartphone, laptop, tablet, kamera, dan aksesori lainnya. Dengan komitmen
             untuk memberikan pengalaman belanja yang menyenangkan, pelanggan dapat dengan mudah mencari dan membeli
@@ -48,6 +48,7 @@
     <!-- Footer -->
     <?php require 'component/footer.php' ?>
 
+    <!-- untuk memanggil js bootstrap -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 
