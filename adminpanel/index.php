@@ -62,7 +62,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
             <i class="fas fa-file-pdf"></i> Export to PDF</a>
 
         <!-- section dashboard admin -->
-        <h2>Dasboard Admin</h2>
+        <h3><b>Dasboard Admin</b></h3>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-3">
