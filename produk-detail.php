@@ -1,5 +1,6 @@
 <?php
 require "koneksi.php";
+require "adminpanel/component/navbar.php";
 
 $nama = htmlspecialchars($_GET['nama']);
 $queryProduk = mysqli_query($conn, "SELECT * FROM produk WHERE nama='$nama'");
@@ -19,8 +20,6 @@ $produk = mysqli_fetch_array($queryProduk);
 </head>
 
 <body>
-    <?php require 'component/navbar.php' ?>
-
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row">
