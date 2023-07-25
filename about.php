@@ -8,7 +8,7 @@
     <title>Tentang Kami</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
-    <?php require "admin/component/navbar-admin.php";?>
+    <?php require "./src/component/navbar-admin.php";?>
 </head>
 
 <body>
