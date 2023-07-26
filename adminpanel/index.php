@@ -2,9 +2,11 @@
 require "../koneksi.php";
 require "component/navbar.php";
 
+// Mengambil data kategori dari tabel kategori
 $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
 $jumlahKategori = mysqli_num_rows($queryKategori);
 
+// Mengambil data produk dari tabel produk
 $queryProduk = mysqli_query($conn, "SELECT * FROM produk");
 $jumlahProduk = mysqli_num_rows($queryProduk);
 ?>
@@ -13,6 +15,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
 <html lang="en">
 
 <head>
+    // Berbagai meta dan link untuk konfigurasi halaman
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
@@ -25,6 +28,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
 </head>
 
 <style>
+    /* Berbagai gaya tampilan menggunakan CSS dan Bootstrap */
     .summary-kategori {
         background-color: #0a6b4a;
         border-radius: 12px;
@@ -44,6 +48,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
 </style>
 
 <body>
+    <!-- Memuat navbar untuk tampilan dashboard admin -->
     <?php
     require "./component/navbar.php"
     ?>
@@ -65,6 +70,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
         <h3><b>Dasboard Admin</b></h3>
         <div class="container mt-5">
             <div class="row">
+                <!-- Summary informasi kategori -->
                 <div class="col-lg-4 col-md-6 mb-3">
                     <div class="summary-kategori p-4">
                         <div class="row">
@@ -80,7 +86,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
                     </div>
                 </div>
 
-
+                <!-- Summary informasi produk -->
                 <div class="col-lg-4 col-md-6 mb-3">
                     <div class="summary-produk p-4">
                         <div class="row">
@@ -99,6 +105,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
         </div>
     </div>
 
+    <!-- Skrip untuk mengatur tampilan dengan Bootstrap dan Font Awesome -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../fontawesome/js/all.min.js"></script>
 </body>
