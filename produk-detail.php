@@ -1,6 +1,5 @@
 <?php
 require "koneksi.php";
-require "component/navbar.php";
 
 $nama = htmlspecialchars($_GET['nama']);
 $queryProduk = mysqli_query($conn, "SELECT * FROM produk WHERE nama='$nama'");
@@ -27,7 +26,7 @@ $produk = mysqli_fetch_array($queryProduk);
                     <img src="images/<?php echo $produk['foto']; ?>" class="w-100">
                 </div>
                 <div class="col-md-6 offset-md-1 mt-3">
-                    <h1><?php echo $produk['nama'] ?></h1>
+                    <h2><b><?php echo $produk['nama'] ?></b></h2>
                     <p class="fs-5">
                         <?php echo $produk['detail'] ?>
                     </p>
