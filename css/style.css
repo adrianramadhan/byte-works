@@ -1,19 +1,24 @@
+/* Gaya untuk elemen dengan latar belakang berwarna #876445 */
 .warna-1 {
     background-color: #876445;
 }
 
+/* Gaya untuk elemen dengan latar belakang berwarna #CA965C */
 .warna-2 {
     background-color: #CA965C;
 }
 
+/* Gaya untuk elemen dengan latar belakang berwarna #1E293B */
 .warna-3 {
     background-color: #1E293B;
 }
 
+/* Gaya untuk elemen dengan latar belakang berwarna #F4DFBA */
 .warna-4 {
     background-color: #F4DFBA;
 }
 
+/* Gaya untuk elemen banner dengan latar belakang gambar dan transparansi */
 .banner {
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/background.jpg');
@@ -23,6 +28,7 @@
     top: 0;
 }
 
+/* Gaya untuk elemen kategori VGA dengan latar belakang gambar dan transparansi */
 .kategori-VGA {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('.../images/VGA.png');
     background-size: cover;
@@ -30,6 +36,7 @@
     cursor: pointer;
 }
 
+/* Gaya untuk elemen kategori CPU dengan latar belakang gambar dan transparansi */
 .kategori-CPU {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/CPU.png');
     background-size: cover;
@@ -37,6 +44,7 @@
     cursor: pointer;
 }
 
+/* Gaya untuk elemen kategori keyboard dengan latar belakang gambar dan transparansi */
 .kategori-keyboard {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/keyboard.png');
     background-size: cover;
@@ -44,19 +52,23 @@
     cursor: pointer;
 }
 
+/* Gaya untuk elemen kategori yang dipilih untuk diberi sorotan tinggi */
 .highlighted-kategori{
     height: 250px;
 }
 
+/* Gaya untuk menghilangkan dekorasi teks pada elemen dengan warna teks putih */
 .no-decoration {
     text-decoration: none;
     color: white;
 }
 
+/* Gaya untuk teks pada elemen yang tidak berdekorasi saat dihover */
 .no-decoration:hover{
     color: #EEC373;
 }
 
+/* Gaya untuk elemen dengan teks harga berukuran 20px dan berwarna #CA965C */
 .text-harga {
     font-size: 20px;
     color: #CA965C;
