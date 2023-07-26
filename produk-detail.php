@@ -47,6 +47,9 @@ $produk = mysqli_fetch_array($queryProduk);
                         <!-- Menampilkan status ketersediaan produk -->
                         Status Ketersediaan : <strong><?php echo $produk['ketersediaan_stok'] ?></strong>
                     </p>
+                    <!-- Tombol "Export to PDF" -->
+                    <a href="#" class="btn btn-primary export-pdf-btn">
+                        <i class="fas fa-file-pdf"></i> Export to PDF</a>
                 </div>
             </div>
         </div>
