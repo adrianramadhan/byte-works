@@ -1,12 +1,18 @@
     <?php
     require "../../koneksi.php";
+    // Memuat file koneksi.php untuk menghubungkan ke database.
+
     $queryProduk = mysqli_query($conn, "SELECT a.*, b.nama AS nama_kategori FROM produk a JOIN kategori b ON a.kategori_id = b.id");
+    // Melakukan query untuk mengambil data produk dari tabel produk dan juga mendapatkan nama kategori berdasarkan id kategori yang ada di tabel kategori.
     $jumlahProduk = mysqli_num_rows($queryProduk);
+    // Menghitung jumlah produk yang ada berdasarkan hasil query.
 
     $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
+    // Melakukan query untuk mengambil daftar kategori produk dari tabel kategori.
 
     function generateRandomString($length)
     {
+        // Fungsi untuk menghasilkan random string untuk nama file foto
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
@@ -15,12 +21,14 @@
         }
         return $randomString;
     }
+    // Fungsi untuk menghasilkan random string sepanjang $length. Fungsi ini digunakan untuk membuat nama file foto produk secara acak.
     ?>
 
     <!DOCTYPE html>
     <html lang="en">
 
     <head>
+        <!-- Berbagai meta dan link untuk konfigurasi halaman -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Produk</title>
@@ -36,22 +44,29 @@
     </style>
 
     <body>
+        <!-- Bagian navigasi dari halaman -->
         <?php require "../component/navbar.php" ?>
+        <!-- Konten utama halaman -->
         <div class="container mt-5">
+            <!-- Tampilkan breadcrumb (navigasi hierarki) untuk memberikan informasi tentang posisi halaman saat ini -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
+                    <!-- Breadcrumb: Home -->
                     <li class="breadcrumb-item active" aria-current="page">
                         <i class="fas fa-home"></i><a href="../index.php" class="no-decoration"> Home</a>
                     </li>
+                    <!-- Breadcrumb: Produk -->
                     <li class="breadcrumb-item active" aria-current="page">
                         Produk
                     </li>
                 </ol>
             </nav>
 
+            <!-- Bagian untuk menambahkan produk baru -->
             <div class="my-5 col-12 col-md-6">
                 <h3>Tambah Produk</h3>
 
+                <!-- Form untuk menambahkan produk baru -->
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="mt-2">
                         <label for="nama">Nama</label>
@@ -60,6 +75,7 @@
                     <div class="mt-2">
                         <label for="kategori">Kategori</label>
                         <select name="kategori" id="kategori" class="form-control">
+                            <!-- Menampilkan daftar kategori produk yang telah diambil dari database -->
                             <?php
                             while ($data = mysqli_fetch_array($queryKategori)) {
                             ?>
@@ -84,6 +100,7 @@
                     <div class="mt-2">
                         <label for="ketersediaan_stok">Ketersediaan Stok</label>
                         <select name="ketersediaan_stok" id="ketersediaan_stok" class="form-control">
+                            <!-- Menampilkan opsi tersedia dan habis untuk ketersediaan stok produk -->
                             <option value="tersedia">tersedia</option>
                             <option value="habis">habis</option>
                         </select>
@@ -153,14 +170,17 @@
                     }
                 }
                 ?>
+                <!-- Bagian untuk menampilkan pesan berhasil atau gagal ketika menambahkan produk baru -->
             </div>
 
+            <!-- Bagian untuk menampilkan daftar produk -->
             <div class="mt-3">
                 <h3>List Produk</h3>
 
                 <div class="table-responsive mt-5">
                     <table class="table">
                         <thead>
+                            <!-- Header tabel -->
                             <th>No.</th>
                             <th>Nama</th>
                             <th>Kategori</th>
@@ -172,9 +192,12 @@
                             <?php
                             $number = 1;
                             if ($jumlahProduk > 0) {
+                                // Jika terdapat produk yang ditampilkan
                                 while ($data = mysqli_fetch_array($queryProduk)) {
+                                    // Lakukan iterasi untuk setiap produk yang ada
                             ?>
                                     <tr>
+                                        <!-- Tampilkan data produk pada baris tabel -->
                                         <td><?php echo $number ?></td>
                                         <td><?php echo $data['nama'] ?></td>
                                         <td><?php echo $data['nama_kategori'] ?></td>
@@ -189,6 +212,7 @@
                                     $number++;
                                 }
                             } else {
+                                // Jika tidak ada produk yang ditampilkan
                                 ?>
                                 <tr>
                                     <td class="text-center" colspan="6">Data Produk Tidak Tersedia</td>
@@ -203,6 +227,7 @@
             </div>
         </div>
 
+        <!-- Skrip untuk mengatur tampilan dengan Bootstrap dan Font Awesome -->
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
         <script src="../../fontawesome/js/all.min.js"></script>
     </body>
