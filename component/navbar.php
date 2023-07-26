@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <!-- CSS khusus untuk tampilan navbar -->
     <style>
     .custom-navbar {
         background-color: #1E293B;
@@ -57,29 +58,38 @@
     }
     </style>
 
+    <!-- Kontainer untuk menyimpan logo dan tombol navigasi terbuka pada layar kecil -->
     <div class="container">
+        <!-- Tautan menuju halaman utama dengan logo -->
         <a class="navbar-brand" href="#">
             <img src="images/byteworks 1.png" alt="Logo">
         </a>
+        <!-- Tombol yang muncul saat tampilan kecil untuk membuka menu navigasi -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Kontainer untuk menyimpan menu navigasi -->
         <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Daftar menu navigasi -->
             <ul class="navbar-nav">
+                <!-- Tautan menuju bagian home -->
                 <li class="nav-item me-3">
                     <a href="#home" class="nav-link text-white" class="nav-link scrollto"><span><b>Home</b></span></a>
                 </li>
+                <!-- Tautan menuju bagian tentang kami -->
                 <li class="nav-item me-3">
                     <a href="#about" class="nav-link text-white" class="nav-link scrollto">
                         <span><b>Tentang Kami</b></span>
                     </a>
                 </li>
+                <!-- Tautan menuju bagian produk -->
                 <li class=" nav-item me-3">
                     <a href="#produk" class="nav-link text-white" class="nav-link scrollto">
                         <span><b>Produk</b></span>
                     </a>
                 </li>
+                <!-- Tautan menuju halaman login admin -->
                 <li class="nav-item me-3">
                     <a class="nav-link text-white" href="../../adminpanel/login/login.php"><b>Login</b></a>
                 </li>
