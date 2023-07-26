@@ -1,16 +1,20 @@
+/* Styling the body element */
 body{
     background-color: #000406;
 }
 
+/* Global styles for all elements */
 *{
     font-family: 'inter', sans-serif;
     font-weight: 700;
 }
 
+/* Styles for the main container */
 .main {
     height: 60vh;
 }
 
+/* Styles for the login box */
 .login-box {
     width: 500px;
     height: 300px;
@@ -18,6 +22,7 @@ body{
     background-color: #D3E6FE;
 }
 
+/* Styles for the login title section */
 .login-title {
     display: flex;
     align-items: center;
@@ -28,11 +33,13 @@ body{
     font-weight: 700;
 }
 
+/* Styles for the login button */
 #login-btn {
     background-color: #334155;
     color: white;
 }
 
+/* Styles for the login heading */
 .login-heading {
     margin-bottom: 30px;
     font-size: 36px;
