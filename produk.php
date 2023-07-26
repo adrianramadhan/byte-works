@@ -1,6 +1,5 @@
 <?php
 require './koneksi.php';
-require "adminpanel/component/navbar.php";
 
 $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
 
