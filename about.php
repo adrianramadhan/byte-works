@@ -13,11 +13,18 @@
 
 <body>
     <!-- Banner/Hero Section -->
-    <div class="container-fluid banner-produk d-flex align-items-center">
-        <div class="container">
-            <h1 class="text-white text-center"><b>About Us</b></h1>
-        </div>
-    </div>
+    <br>
+    <h2><b>About Us</b></h2>
+    <style>
+    h2 {
+        font-size: 30px;
+        /* Ukuran font */
+        color: #1E293B;
+        /* Warna biru */
+        text-align: center;
+        /* Pusatkan teks */
+    }
+    </style>
 
 <!-- Section About Us-->
     <div class="mt-5" style="margin-left: 15%; margin-right: 15%;">
