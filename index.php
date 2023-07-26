@@ -1,5 +1,7 @@
 <?php
+// Memanggil file koneksi.php yang berisi script untuk melakukan koneksi ke database
 require "koneksi.php";
+// Memanggil file navbar.php yang berisi script untuk menampilkan navbar pada halaman
 require "component/navbar.php";
 // Mengambil data produk dari tabel produk dengan batasan 6 baris
 $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM produk LIMIT 6");
