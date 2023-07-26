@@ -1,6 +1,7 @@
 <?php
 require "koneksi.php";
 require "component/navbar.php";
+// Mengambil data produk dari tabel produk dengan batasan 6 baris
 $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM produk LIMIT 6");
 ?>
 
@@ -21,6 +22,7 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM pr
     <div class="container-fluid banner d-flex align-items-center" id="home">
         <div class="container text-center text-white">
             <h1 class="custom-text1"><b>Your Future Device</b></h1>
+            <!-- Inline CSS: Styling untuk elemen dalam halaman -->
             <style>
             .custom-text1 {
                 font-size: 50px;
@@ -58,6 +60,7 @@ $queryProduk = mysqli_query($conn, "SELECT id, nama, harga, foto, detail FROM pr
             </style>
             <h4>Good Device, Good Experience For Your Explore</h4>
             <div class="col-md-8 offset-md-2">
+                <!-- Form pencarian produk berdasarkan keyword -->
                 <form action="produk.php" method="get">
                     <div class="input-group input-group-lg my-4">
                         <input type="text" class="form-control" placeholder="Cari Barang Kebutuhanmu"
